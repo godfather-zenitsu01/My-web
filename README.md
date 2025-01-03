@@ -9,7 +9,9 @@ Welcome to my portfolio! Here, you'll find an overview of my skills, projects, a
 ## 🖥️ About Me
 
 Hi, I'm **The Godfather Zenitsu**, a passionate programmer, designer, and cyber security with a love for operating systems, painting, locally development, making and listening to music, design, AI, writing books, poems, and stories.  
-I strive to build creative and impactful solutions that make a difference.  
+I strive to build creative and impactful solutions that make a difference.
+
+![20250103_221142.jpg](https://github.com/user-attachments/assets/f11de3c1-c37b-4b7f-90e2-6e39637671ee)
 
 ---
 
