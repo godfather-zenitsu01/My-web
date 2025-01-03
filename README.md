@@ -33,6 +33,8 @@ I strive to build creative and impactful solutions that make a difference.
 - **Design**: [Figma, Adobe XD, etc.]
 - **Other**: [Git, Docker, etc.]
 
+![320f459d77e5aeb4e97d28b189ccdd8f.jpg](https://github.com/user-attachments/assets/b90ba85d-9bec-4ed4-a456-5f368ac528de)
+
 ---
 
 ## 📬 Contact Me
