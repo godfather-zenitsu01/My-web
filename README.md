@@ -2,6 +2,8 @@
 
 Welcome to my portfolio! Here, you'll find an overview of my skills, projects, and experiences that define my journey as a programmer. Dive in and explore!
 
+![d11a08ef8b59bb4c2cc7016b692d6f29.jpg](https://github.com/user-attachments/assets/47a97793-4471-4e3a-9822-a064c491d075)
+
 ---
 
 ## 🖥️ About Me
