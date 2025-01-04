@@ -1,73 +1,68 @@
-/* style.css */
 body {
-    font-family: 'Montserrat', sans-serif; /* Modern font */
-    background-color: #111;
-    color: #fff;
-    overflow-x: hidden; /* Smooth scrolling on mobile */
+    background-color: black;
+    color: darkgoldenrod;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* ... (rest of your CSS) ... */
-
-/* Add a subtle gradient to the background */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom right, #181818, #111);
-    opacity: 0.2;
-    z-index: -1;
+header {
+    text-align: center;
+    padding: 50px;
 }
 
-/* Light effect for hero section */
-.hero {
-    /* ... (existing styles) ... */
-    position: relative;
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid darkgoldenrod;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 0, 0.1) 0%, transparent 50%); 
-    opacity: 0.5;
-    z-index: -1; 
-    animation: pulse 2s infinite; 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-@keyframes pulse {
-    0% {
-        opacity: 0.5;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.2;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 0.5;
-        transform: scale(1);
-    }
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: darkgoldenrod; }
 }
 
-/* Add a subtle glow to skill bars */
-.progress-fill {
-    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5); 
+.profile-photo {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
 }
 
-/* Add a light hover effect to project cards */
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 0, 0.2);
+.skills, .about-me, .contact-me {
+    padding: 20px;
+    text-align: center;
 }
 
-/* Add a subtle glow to buttons */
-.btn {
-    /* ... (existing styles) ... */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: darkgoldenrod;
+    color: black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: darkgoldenrod;
 }
