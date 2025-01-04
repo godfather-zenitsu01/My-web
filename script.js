@@ -1,49 +1,42 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Typewriter Effect
-  const phrases = ["Web Developer", "Designer", "Creative Coder"];
-  let i = 0;
-  let j = 0;
-  let currentPhrase = [];
-  const typingSpeed = 150;
-  const erasingSpeed = 100;
-  const target = document.getElementById("typing");
+// script.js
 
-  function loop() {
-    if (i < phrases.length) {
-      if (j < phrases[i].length) {
-        currentPhrase.push(phrases[i][j]);
-        j++;
-        target.innerHTML = currentPhrase.join("");
-        setTimeout(loop, typingSpeed);
-      } else {
-        setTimeout(() => {
-          currentPhrase.pop();
-          target.innerHTML = currentPhrase.join("");
-          j--;
-          if (j === 0) {
-            i++;
-            loop();
-          } else {
-            setTimeout(loop, erasingSpeed);
-          }
-        }, 1500);
-      }
-    } else {
-      i = 0;
-      loop();
-    }
+// Typewriter effect
+const typewriter = document.querySelector('.typewriter');
+const textArray = ['Hello, I\'m Zenitsu!', 'A passionate web developer.'];
+let currentIndex = 0;
+let charIndex = 0;
+
+function type() {
+  const currentText = textArray[currentIndex];
+  if (charIndex < currentText.length) {
+    typewriter.textContent += currentText.charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 50); // Adjust typing speed here
+  } else {
+    setTimeout(() => {
+      typewriter.textContent = '';
+      currentIndex = (currentIndex + 1) % textArray.length;
+      charIndex = 0;
+      type();
+    }, 2000); // Adjust delay between text changes here
   }
-  loop();
+}
 
-  // GSAP Animations
-  gsap.from(".title", { duration: 2, opacity: 0, y: -50 });
-  gsap.from(".subtitle", { duration: 2, opacity: 0, y: 50, delay: 0.5 });
-  gsap.from(".profile-img", { duration: 2, opacity: 0, scale: 0.5, delay: 1 });
-  gsap.from(".card", {
-    duration: 1.5,
-    opacity: 0,
-    scale: 0.8,
-    stagger: 0.2,
-    delay: 1.5,
-  });
+type();
+
+// Smooth scrolling
+const sections = document.querySelectorAll('section[id]');
+
+function scrollToSection(event) {
+  event.preventDefault();
+  const targetID = this.getAttribute('href').substring(1); // Remove '#'
+  const section = document.getElementById(targetID);
+  section.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', scrollToSection);
 });
+
+// Optional: Add more interactive elements here using JavaScript
+// (e.g., hover effects, animations, form validation, etc.)
