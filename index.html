@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">Welcome to My Portfolio</h1>
+      <p class="subtitle">Creating with Passion and Innovation</p>
+    </header>
+
+    <section class="hero">
+      <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img">
+      <div class="typewriter">
+        <h2>Hello, I'm a <span id="typing"></span></h2>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Building responsive and advanced websites.</p>
+      </div>
+      <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>Creating seamless and intuitive user experiences.</p>
+      </div>
+      <div class="card">
+        <h3>Creative Coding</h3>
+        <p>Transforming ideas into interactive realities.</p>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>My Skills</h2>
+      <div class="skill-bar">
+        <p>HTML</p>
+        <div class="progress" style="width: 90%;"></div>
+      </div>
+      <div class="skill-bar">
+        <p>CSS</p>
+        <div class="progress" style="width: 80%;"></div>
+      </div>
+      <div class="skill-bar">
+        <p>JavaScript</p>
+        <div class="progress" style="width: 85%;"></div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I’m passionate about technology, design, and creating projects that make a difference.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 My Portfolio</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
