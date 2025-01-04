@@ -1,93 +1,166 @@
+/* style.css */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: #f1c40f;
-  overflow-x: hidden;
+    font-family: sans-serif;
+    background-color: #111; /* Dark background */
+    color: #fff; /* White text */
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.title {
-  font-size: 3em;
-  animation: glow 2s infinite alternate;
-}
-
-.subtitle {
-  font-size: 1.2em;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px;
 }
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 0;
+    background-color: #111; 
+    text-align: center;
+    padding: 150px 0;
+    overflow: hidden; /* For animation effects */
 }
 
-.profile-img {
-  width: 150px;
-  border-radius: 50%;
-  border: 5px solid #f1c40f;
+.hero-image {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5); /* Yellowish glow */
 }
 
-.typewriter h2 {
-  font-size: 1.5em;
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #fff;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: 
+        typing 3s steps(30, end),
+        blink-caret .5s step-end infinite;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 40px 0;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.card {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #f1c40f;
-  width: 30%;
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
 
-.skills .skill-bar {
-  background: #333;
-  margin: 10px 0;
-  border-radius: 5px;
-  position: relative;
-  height: 25px;
+.btn {
+    background-color: #ffd700; /* Bright yellow */
+    color: #111;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.skills .progress {
-  background: #f1c40f;
-  height: 100%;
-  border-radius: 5px;
+.btn:hover {
+    background-color: #ffc107; /* Slightly darker yellow on hover */
 }
 
-.about, .contact {
-  margin: 40px 0;
-  text-align: center;
+.about {
+    padding: 50px 0;
+}
+
+.skills {
+    padding: 50px 0;
+}
+
+.skill {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #ffd700; 
+    border-radius: 5px;
+}
+
+.projects {
+    padding: 50px 0;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.project-card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.contact {
+    padding: 50px 0;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
 }
 
 footer {
-  text-align: center;
-  padding: 20px;
+    background-color: #181818;
+    padding: 20px 0;
+    text-align: center;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f;
-  }
-  to {
-    text-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f;
-  }
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media li {
+    margin: 0 10px;
+}
+
+.social-media a {
+    color: #ffd700; 
+}
+
+/* Responsive Design (example) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr; 
+    }
 }
