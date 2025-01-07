@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+yimport React, { useState, useEffect } from 'react';
 import { Github, Mail, Linkedin, Twitter, Menu, X } from 'lucide-react';
 
 const Portfolio = () => {
