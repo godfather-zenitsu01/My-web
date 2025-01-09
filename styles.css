@@ -183,8 +183,7 @@
         }
 
     .thunder-btn {
-      position: absolute;
-      top: 50%;
+      position: relative;
       padding: 20px 40px;
       font-size: 24px;
       background: linear-gradient(45deg, #ffd700, #ffa500);
