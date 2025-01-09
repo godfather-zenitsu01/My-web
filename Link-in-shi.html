@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Shi Links</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Added Google Fonts for horror style -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Metal+Mania&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .lightning {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,0,0.2), transparent);
+        }
+
+        .profile-container {
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 25px;
+            border: 4px solid #ffd700;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .username {
+            font-family: 'Nosifer', cursive;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                         2px 2px 4px rgba(255, 0, 0, 0.3);
+            letter-spacing: 2px;
+            animation: glowText 2s infinite alternate;
+        }
+
+        .links-container {
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .link-button {
+            font-family: 'Metal Mania', cursive;
+            font-size: 1.3rem;
+            padding: 1rem;
+            border-radius: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .link-button:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 215, 0, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            font-family: 'Creepster', cursive;
+            font-size: 1.5rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: creepyFloat 3s infinite alternate;
+        }
+
+        .gif-container {
+            width: 200px;
+            height: 200px;
+            margin: 1rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes creepyFloat {
+            0% { transform: translateY(0px) rotate(-2deg); }
+            100% { transform: translateY(-5px) rotate(2deg); }
+        }
+
+        @keyframes glowText {
+            0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8),
+                               0 0 30px rgba(255, 215, 0, 0.6); }
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Blood drip effect for buttons */
+        .link-button::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 10px;
+            background: #ffd700;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .link-button:hover::after {
+            opacity: 1;
+            height: 15px;
+        }
+
+        /* Thunder animation */
+        @keyframes flash {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lightning"></div>
+    
+    <div class="profile-container">
+        <img class="profile-pic" src="./assets/images/icon.jpg" alt="Zenitsu Profile Picture">
+        <h1 class="username">⚡ Zenitsu ⚡</h1>
+    </div>
+
+    <div class="links-container">
+        <a href="#" class="link-button">🌟 Instagram</a>
+        <a href="#" class="link-button">💫 Twitter</a>
+        <a href="#" class="link-button">⚡ YouTube</a>
+        <a href="#" class="link-button">✨ TikTok</a>
+        <a href="#" class="link-button">💭 Discord</a>
+    </div>
+
+    <div class="footer">
+        <div class="gif-container">
+            <img src="./assets/images/ZGIF.gif" alt="Cute Anime Gif">
+        </div>
+        <p>⚡ Thunder Breathing, First Form ⚡</p>
+    </div>
+
+    <script>
+        // Lightning effect
+        function createLightning() {
+            const lightning = document.querySelector('.lightning');
+            lightning.style.opacity = 1;
+            setTimeout(() => {
+                lightning.style.opacity = 0;
+            }, 100);
+        }
+
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                createLightning();
+            }
+        }, 2000);
+
+        // Sparkle effect
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            
+            const size = Math.random() * 5 + 2;
+            sparkle.style.width = `${size}px`;
+            sparkle.style.height = `${size}px`;
+            
+            const startX = Math.random() * window.innerWidth;
+            const startY = Math.random() * window.innerHeight;
+            
+            sparkle.style.left = `${startX}px`;
+            sparkle.style.top = `${startY}px`;
+            
+            document.body.appendChild(sparkle);
+
+            anime({
+                targets: sparkle,
+                opacity: [1, 0],
+                translateY: -50,
+                duration: 1500,
+                easing: 'easeOutExpo',
+                complete: () => {
+                    sparkle.remove();
+                }
+            });
+        }
+
+        setInterval(createSparkle, 200);
+
+        // Animate links on page load
+        anime({
+            targets: '.link-button',
+            translateY: [50, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(100),
+            easing: 'easeOutExpo',
+            duration: 1500
+        });
+    </script>
+</body>
+</html>
