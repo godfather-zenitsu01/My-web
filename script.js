@@ -97,6 +97,91 @@ function initAnimations() {
 
 }
 
+function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      
+      // Random direction and speed
+      const angle = Math.random() * Math.PI * 2;
+      const velocity = 5 + Math.random() * 15;
+      const dx = Math.cos(angle) * velocity;
+      const dy = Math.sin(angle) * velocity;
+      
+      document.body.appendChild(particle);
+      
+      let opacity = 1;
+      let posX = x;
+      let posY = y;
+      
+      function animate() {
+        if (opacity <= 0) {
+          particle.remove();
+          return;
+        }
+        
+        opacity -= 0.02;
+        posX += dx;
+        posY += dy;
+        
+        particle.style.opacity = opacity;
+        particle.style.transform = `translate(${posX - x}px, ${posY - y}px)`;
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+    }
+
+    function createThunderSound() {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const duration = 1;
+      const frequency = 100;
+      
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.type = 'sawtooth';
+      oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+      
+      gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.1);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + duration);
+    }
+
+    function triggerThunder(button) {
+      // Add animated class
+      button.classList.add('animated');
+      
+      // Create thunder sound
+      createThunderSound();
+      
+      // Flash effect
+      const thunderEffect = document.querySelector('.thunder-effect');
+      thunderEffect.style.animation = 'flash 0.5s ease-out';
+      
+      // Create particles
+      const rect = button.getBoundingClientRect();
+      for (let i = 0; i < 20; i++) {
+        createParticle(
+          rect.left + Math.random() * rect.width,
+          rect.top + Math.random() * rect.height
+        );
+      }
+      
+      // Remove animated class and reset flash animation
+      setTimeout(() => {
+        button.classList.remove('animated');
+        thunderEffect.style.animation = 'none';
+      }, 500);
+    }
+
 // Mobile menu functionality
 function initMobileMenu() {
     const menuBtn = document.querySelector('.menu-btn');
