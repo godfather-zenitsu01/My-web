@@ -175,11 +175,13 @@ function createParticle(x, y) {
         );
       }
       
-      // Remove animated class and reset flash animation
+      // Add fade out effect to body
+      document.body.classList.add('fade-out');
+      
+      // Navigate to new page after effects
       setTimeout(() => {
-        button.classList.remove('animated');
-        thunderEffect.style.animation = 'none';
-      }, 500);
+        window.location.href = 'Link-in-shi.html';
+      }, 800); // Wait for effects to finish
     }
 
 // Mobile menu functionality
