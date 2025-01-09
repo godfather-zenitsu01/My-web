@@ -99,7 +99,7 @@ function initAnimations() {
 
 function createParticle(x, y) {
       const particle = document.createElement('div');
-      particle.className = 'particle';
+      particle.className = 'bparticle';
       particle.style.left = x + 'px';
       particle.style.top = y + 'px';
       
@@ -109,7 +109,7 @@ function createParticle(x, y) {
       const dx = Math.cos(angle) * velocity;
       const dy = Math.sin(angle) * velocity;
       
-      document.body.appendChild(particle);
+      document.body.appendChild(bparticle);
       
       let opacity = 1;
       let posX = x;
@@ -117,7 +117,7 @@ function createParticle(x, y) {
       
       function animate() {
         if (opacity <= 0) {
-          particle.remove();
+          bparticle.remove();
           return;
         }
         
@@ -125,8 +125,8 @@ function createParticle(x, y) {
         posX += dx;
         posY += dy;
         
-        particle.style.opacity = opacity;
-        particle.style.transform = `translate(${posX - x}px, ${posY - y}px)`;
+        bparticle.style.opacity = opacity;
+        bparticle.style.transform = `translate(${posX - x}px, ${posY - y}px)`;
         requestAnimationFrame(animate);
       }
       
