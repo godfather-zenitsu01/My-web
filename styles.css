@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+
+$bg: #fff;
+$text: #382b22;
+$light-pink: #fff0f0;
+$pink: #ffe9e9;
+$dark-pink: #f9c4d2;
+$pink-border: #b18597;
+$pink-shadow: #ffe3e2;
+
         :root {
             --primary: #ffd700;
             --secondary: #ffb700;
@@ -181,16 +191,6 @@
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--primary), transparent);
         }
-
-@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
-
-$bg: #fff;
-$text: #382b22;
-$light-pink: #fff0f0;
-$pink: #ffe9e9;
-$dark-pink: #f9c4d2;
-$pink-border: #b18597;
-$pink-shadow: #ffe3e2;
 
   .button {
   position: relative;
