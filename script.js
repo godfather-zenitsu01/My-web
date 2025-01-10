@@ -99,17 +99,16 @@ function initAnimations() {
 
 function createParticle(x, y) {
       const particle = document.createElement('div');
-      particle.className = 'bparticle';
+      particle.className = 'particle';
       particle.style.left = x + 'px';
       particle.style.top = y + 'px';
       
-      // Random direction and speed
       const angle = Math.random() * Math.PI * 2;
       const velocity = 5 + Math.random() * 15;
       const dx = Math.cos(angle) * velocity;
       const dy = Math.sin(angle) * velocity;
       
-      document.body.appendChild(bparticle);
+      document.body.appendChild(particle);
       
       let opacity = 1;
       let posX = x;
@@ -117,7 +116,7 @@ function createParticle(x, y) {
       
       function animate() {
         if (opacity <= 0) {
-          bparticle.remove();
+          particle.remove();
           return;
         }
         
@@ -125,8 +124,8 @@ function createParticle(x, y) {
         posX += dx;
         posY += dy;
         
-        bparticle.style.opacity = opacity;
-        bparticle.style.transform = `translate(${posX - x}px, ${posY - y}px)`;
+        particle.style.opacity = opacity;
+        particle.style.transform = `translate(${posX - x}px, ${posY - y}px)`;
         requestAnimationFrame(animate);
       }
       
@@ -155,7 +154,7 @@ function createParticle(x, y) {
       oscillator.stop(audioContext.currentTime + duration);
     }
 
-    function triggerThunder(button) {
+    function triggerThunderAndNavigate(button) {
       // Add animated class
       button.classList.add('animated');
       
@@ -174,7 +173,7 @@ function createParticle(x, y) {
           rect.top + Math.random() * rect.height
         );
       }
-      
+
       // Add fade out effect to body
       document.body.classList.add('fade-out');
       
